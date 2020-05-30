@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="./vue.js"></script>
+        <title>Fetch 请求</title>
+    </head>
+    <body>
+        <h1>Fetch 请求</h1>
+        <div id="app">
+            <h4>POST:</h4>
+            <form @submit.prevent="onSubmit">
+                <input type="text" v-model="todo.title" />
+                <input type="checkbox" v-model="todo.completed" />
+                <input type="submit" value="提交" />
+            </form>
+            <h3>GET:</h3>
+            <ul>
+                <li v-for="todo in todos">
+                    <h4>{{todo.title}}</h4>
+                    <h5>{{todo.completed}}</h5>
+                </li>
+            </ul>
+        </div>
+        <script src="./app.js"></script>
+    </body>
+</html>
